@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "console": "integratedTerminal",
+            "name": "(Windows) Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/target/debug/guess.exe",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "symbolSearchPath": "https://msdl.microsoft.com/download/symbols",
+            "environment": []
+          }
+          ]
+}
