@@ -11,6 +11,6 @@
             "cwd": "${workspaceFolder}",
             "symbolSearchPath": "https://msdl.microsoft.com/download/symbols",
             "environment": []
-          }
-          ]
+        }
+    ]
 }
