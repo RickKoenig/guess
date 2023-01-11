@@ -3,6 +3,7 @@ use std::cmp::Ordering;
 use std::io;
 
 pub fn main1() {
+    // guess the number game chapter 2
     println!("Guess the number!");
     let secret_number = rand::thread_rng().gen_range(1, 101);
     // println!("The secret number is: {}", secret_number);
