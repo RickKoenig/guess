@@ -6,7 +6,7 @@
             "name": "(Windows) Launch",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/target/debug/guess.exe",
+            "program": "${workspaceFolder}/target/debug/${workspaceRootFolderName}",
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "symbolSearchPath": "https://msdl.microsoft.com/download/symbols",

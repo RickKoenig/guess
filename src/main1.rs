@@ -1,6 +1,7 @@
 use rand::Rng;
-use std::cmp::Ordering;
-use std::io;
+//use std::cmp::Ordering;
+//use std::io;
+use std::{cmp::Ordering, io};
 
 pub fn main1() {
     // guess the number game chapter 2

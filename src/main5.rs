@@ -56,7 +56,7 @@ fn value_in_cents(coin: &Coin) -> u8 {
         Coin::Quarter(state) => {
             println!("State quarter from {:?}!", state);
             25
-        },
+        }
     }
 }
 
@@ -100,7 +100,7 @@ pub fn main5() {
     //let sum = x + y;
 
     let acoin = Coin::Quarter(UsState::Alaska);
-    println!("coin value = {}", value_in_cents(& acoin));
+    println!("coin value = {}", value_in_cents(&acoin));
 
     let five = Some(5);
     let size = plus_one(five);
