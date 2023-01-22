@@ -5,7 +5,7 @@ use std::{cmp::Ordering, io};
 
 pub fn main1() {
     // guess the number game chapter 2
-    println!("Guess the number!");
+    println!("Guess the number, from 1 to 100");
     let secret_number = rand::thread_rng().gen_range(1, 101);
     // println!("The secret number is: {}", secret_number);
     loop {
@@ -14,9 +14,12 @@ pub fn main1() {
         io::stdin()
             .read_line(&mut guess)
             .expect("Failed to read line");
-        let guess: u32 = match guess.trim().parse() {
+        let guess: i32 = match guess.trim().parse() {
             Ok(num) => num,
-            Err(_) => continue,
+            Err(_) => {
+                println!("Invalid number!");
+                continue;
+            }
         };
         println!("You guessed: {}", guess);
 

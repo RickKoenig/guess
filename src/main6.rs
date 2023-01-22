@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+#![allow(unused_variables)]
 pub fn main6() {
     let mut v: Vec<u32> = Vec::new();
     let v2 = vec![1.2, 2.3, 3.4f32];
@@ -45,7 +47,7 @@ pub fn main6() {
         ];
     }
     {
-        let mut s = String::new();
+        let s = String::new();
         let hello = String::from("Dobrý den");
         println!("hello = {}", hello);
         let mut s = "foo".to_string();

@@ -1,3 +1,6 @@
+#![allow(dead_code)]
+#![allow(unused_variables)]
+
 struct User {
     username: String,
     email: String,
@@ -15,6 +18,9 @@ struct Rect {
 }
 
 impl Rect {
+    fn new(x: u32, y: u32) -> Rect {
+        Rect { wid: x, hit: y }
+    }
     fn area(&self) -> u32 {
         self.wid * self.hit
     }
@@ -85,6 +91,10 @@ pub fn main4() {
         println!("Can rect1 hold rect3? {}", rect1.can_hold(&rect3));
         let rsq = Rect::square(11);
         println!("area of sq = {}", rsq.area());
+
+        let rect4 = Rect::new(20, 30);
+        let a3 = rect4.area();
+        println!("area new  = {}", a3);
     }
 
     // methods
