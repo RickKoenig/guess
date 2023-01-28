@@ -20,6 +20,6 @@ fn main() {
     //main4::main4(); // struct
     //main5(); // enums
     //main6(); // collections
-    main7(); // error handling
+    //main7(); // error handling
     main10(); // genric types, traits, and lifetimes ( TODO: number chapters right)
 }
