@@ -62,7 +62,7 @@ pub fn main10() {
         }
 
         impl<T, U> PointG<T, U> {
-            fn mixup<V, W> (self, other: PointG<V, W>) -> PointG<T, W> {
+            fn mixup<V, W>(self, other: PointG<V, W>) -> PointG<T, W> {
                 PointG {
                     x: self.x,
                     y: other.y,
@@ -82,7 +82,7 @@ pub fn main10() {
         }
 
         impl PointM<f32> {
-            fn dist_from_origin(&self) ->f32 {
+            fn dist_from_origin(&self) -> f32 {
                 (self.x.powi(2) + self.y.powi(2)).sqrt()
             }
         }
@@ -95,22 +95,85 @@ pub fn main10() {
             y: String::from("ho"),
         };
         let intp = PointG { x: 5, y: 10.5 };
-        let mp = PointM { x: 5f32, y: 12f32};
-        let f32p = Point {x: 5.5f32, y: 6.6f32};
-        let f32pt: Point<f64> = Point {x: 5.5, y: 6.6};
+        let mp = PointM { x: 5f32, y: 12f32 };
+        let f32p = Point {
+            x: 5.5f32,
+            y: 6.6f32,
+        };
+        let f32pt: Point<f64> = Point { x: 5.5, y: 6.6 };
         println!("p.x = {}", mp.x());
         let dist = mp.dist_from_origin();
         println!("dist from orig = {}", dist);
 
         let p1 = PointG { x: 5, y: 10.4 };
-        let p2 = PointG { x: "Hello", y: 'c'};
-       
+        let p2 = PointG { x: "Hello", y: 'c' };
+
         let p3 = p1.mixup(p2);
         println!("p3.x = {}, p3.y = {}", p3.x, p3.y);
-        
+
         let int = Some(5);
         let float = Some(5.0f32);
         let what: Option<u32> = None;
-        
+    }
+    {
+        trait Summary {
+            //fn summarize(&self) -> String;
+
+            fn summarize(&self) -> String {
+                String::from("(Read more...)")
+            } 
+        }
+
+        struct NewsArticle {
+            headline: String,
+            location: String,
+            author: String,
+            content: String,
+        }
+
+        impl Summary for NewsArticle {
+            fn summarize(&self) -> String {
+                format!("{}, by {} ({})", self.headline, self.author, self.location)
+            }
+        }
+
+        struct Tweet {
+            username: String,
+            content: String,
+            reply: bool,
+            retweet: bool,
+        }
+
+        impl Summary for Tweet {
+            /*
+            fn summarize(&self) -> String {
+                format!("{}: {}", self.username, self.content)
+            } 
+            */
+        }
+        let tweet = Tweet {
+            username: String::from("horse_ebooks"),
+            content: String::from("of course, as you probably already know, people"),
+            reply: false,
+            retweet: false,
+        };
+        println!("1 new tweet: {}", tweet.summarize());
+
+        let news_article = NewsArticle {
+            headline: String::from("news"),
+            location: String::from("loc"),
+            author: String::from("auth"),
+            content: String::from("contents")
+        };
+        println!("1 new newsArticle: {}", news_article.summarize());
+
+        let article = NewsArticle {
+            headline: String::from("Penguins win the Stanley Cup Championship!"),
+            location: String::from("Pittsburgh, PA, USA"),
+            author: String::from("Iceburgh"),
+            content: String::from("The Pittsburgh Penguins once again are the best
+            hockey team in the NHL."),
+        };
+        println!("New article available! {}", article.summarize());
     }
 }
