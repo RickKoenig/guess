@@ -31,7 +31,7 @@ fn largest<T: PartialOrd + Copy>(list: &[T]) -> T {
 
     for &item in list.iter() {
         if item > largest {
-        //if true {
+            //if true {
             largest = item;
         }
     }
@@ -51,8 +51,6 @@ pub fn main10() {
         let int_list = vec![33, 55, 44, 22, 11];
         let result = largest(&int_list);
         println!("The largest int is {}", result);
-
-        
     }
 
     {
@@ -210,7 +208,7 @@ pub fn main10() {
                 }
         */
 
-        fn notify<T: Summary>(item: T) {
+        fn notify<T: Summary>(item: &T) {
             println!("Breaking news! no sugar {}", item.summarize());
         }
 
@@ -265,8 +263,12 @@ pub fn main10() {
 
         println!("New face! {}", face.summarize());
 
-        notify(tweet);
-        notify(article);
-        notify(face);
+        notify(&tweet);
+        notify(&article);
+        notify(&face);
+
+        notify(&tweet);
+        notify(&article);
+        notify(&face);
     }
 }
